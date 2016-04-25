@@ -1,0 +1,7 @@
+
+#! /bin/bash
+
+for ((i = 64; i <= 256; i=i*2))
+do
+	Serial_Runscript ./largeexample2 $i 2.404825558 1.1 0
+done

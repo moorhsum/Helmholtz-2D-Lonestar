@@ -1,0 +1,24 @@
+#!/bin/bash
+# Script for submitting jobs
+# -q: Cluster Name
+# -l: Request time allocation
+# -pe: Request number of nodes and cores
+# -N: Job Name
+# -M: Error message contact e-mail
+# -o: Execution Output filename
+# -e: Execution error log filename
+
+echo "Submitting Job to Largemem Queue..."
+qsub 	-V \
+	-q largemem \
+	-l h_rt=24:00:00 \
+	-pe 12way 24 \
+	-N KiteN$2k$3 \
+	-M moorhsumsignup@gmail.com \
+	-m beasn \
+	-cwd \
+	-o Rel_KiteN$2k$3_output.txt \
+	-e Rel_KiteN$2k$3_error.txt \
+	-b y \
+	$*
+

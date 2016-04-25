@@ -1,0 +1,17 @@
+#!/bin/bash
+# Script for submitting jobs
+
+echo "Submitting Job to Normal Queue..."
+qsub 	-V \
+	-q normal \
+	-l h_rt=24:00:00 \
+	-pe 12way 12 \
+	-N KiteN$2k$3 \
+	-M moorhsumsignup@gmail.com \
+	-m beasn \
+	-cwd \
+	-o Rel_KiteN$2k$3_noutput.txt \
+	-e Rel_KiteN$2k$3_nerror.txt \
+	-b y \
+	$*
+

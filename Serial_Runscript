@@ -1,0 +1,17 @@
+#!/bin/bash
+# Script for submitting jobs
+
+echo "Submitting Job to Queue..."
+qsub 	-V \
+	-q serial \
+	-l h_rt=12:00:00 \
+	-pe 1way 12 \
+	-N KiteN$2k$3 \
+	-M moorhsumsignup@gmail.com \
+	-m beasn \
+	-cwd \
+	-o Rel_KiteN$2k$3_output.txt \
+	-e Rel_KiteN$2k$3_error.txt \
+	-b y \
+	$*
+
